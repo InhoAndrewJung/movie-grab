@@ -5,7 +5,19 @@ var app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var http = require('http');
 
+var server = http.createServer(function(request, response) {
+
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end("Hello Azure!");
+
+});
+
+var port = process.env.PORT || 1337;
+server.listen(port);
+
+console.log("Server running at http://localhost:%d", port);
 // connect database
 mongoose.connect(process.env.MONGO_DB);
 var db = mongoose.connection;
@@ -80,7 +92,7 @@ app.delete('/posts/:id', function(req,res){
 }); // destroy
 
 
-// start server
-app.listen(3000, function(){
-  console.log('Server On!');
-});
+// start local server
+//app.listen(3000, function(){
+//  console.log('Server On!');
+//});
