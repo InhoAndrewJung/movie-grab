@@ -11,6 +11,23 @@
       <% include partials/top %>
 <!-- MAIN START -->
 
+<!-- views/posts/index.ejs -->
+<div class="index">
+  <a href="/posts/new"><button>New</button></a>
+  <ul>
+    <% data.forEach(function(e){ %>
+    <li>
+    <a href="/posts/<%=e._id %>"><%= e._id %></a>
+    <a href="/posts/<%=e._id %>"><%= e.releaseDate %></a>
+    <a href="/posts/<%=e._id %>"><%= e.movieName %></a>
+    <a href="/posts/<%=e._id %>"><%= e.tags %></a>
+    <a href="/posts/<%=e._id %>"><%= e.url %></a>
+    <a href="/posts/<%=e._id %>"><%= e.actors %></a>
+  
+</li>
+<%}) %>
+</ul>
+</div>
 <!-- MAIN END -->
     </div><!--posts end-->
     <footer>

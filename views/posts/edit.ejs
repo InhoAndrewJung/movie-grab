@@ -1,0 +1,17 @@
+<div class = "edit">
+  <h3>Edit Movie Information</h3>
+  <form class ="posts_form" action="/posts/<%=data._id%>?_method=put" method="put">
+    <label>Movie Name</lable>
+      <input type="text" name="post[movieName]" value="<%=data.movieName%>">
+    <label>Release Date</lable>
+      <input type="text" name="post[releaseDate]" value="<%=data.releaseDate%>">
+    <label>Tags</lable>
+        <input type="text" name="post[tags]" value="<%=data.tags%>">
+    <label>Url</lable>
+          <input type="text" name="post[url]" value="<%=data.url%>">
+    <label>Actors</lable>
+          <input type="text" name="post[actors]" value="<%=data.actors%>">
+          <button type="submit">Submit</button>
+        </form>
+<a href="/posts"><button>Back</button><a>
+        </div>
